@@ -1,0 +1,41 @@
+<div class="city">
+	<h1 class="city-name">{{weatherForecast?.resolvedAddress}}</h1>
+	<div class="city-weather-today">
+		<mat-tab-group dynamicHeight>
+			<mat-tab
+				*ngFor="let dayForecast of weatherForecast?.days"
+				[label]="dayForecast.datetime"
+			>
+				<div class="large-box mat-elevation-z4">
+					<div class="icon-main-info">
+						<img
+							[src]="'https://raw.githubusercontent.com/visualcrossing/WeatherIcons/73c8cc581d8d35076b47047088f3bc91cb1dd675/SVG/3rd%20Set%20-%20Color/'+dayForecast.icon+'.svg'"
+							[alt]="dayForecast.icon"
+							class="icon"
+						>
+						<h3>{{dayForecast.temp}}°C</h3>
+						<h4>{{dayForecast.conditions}}</h4>
+						<small>Sunrise: {{dayForecast.sunrise}}; Sunset: {{dayForecast.sunset}}</small>
+					</div>
+					<div>
+						<p>Min temp: {{dayForecast.tempmin}}°C</p>
+						<p>Max temp: {{dayForecast.tempmax}}°C</p>
+						<p>Feels like: {{dayForecast.feelslike}}°C</p>
+						<p>Pressure: {{dayForecast.pressure}}</p>
+						<p>Humidity: {{dayForecast.humidity}}</p>
+						<p>Wind speed: {{dayForecast.windspeed}} m/s</p>
+						<p>Visibility: {{dayForecast.visibility}}</p>
+					</div>
+				</div>
+			</mat-tab>
+		</mat-tab-group>
+
+	</div>
+	<p class="city-description">
+		{{cityDescription}}
+	</p>
+	<a
+		class="city-wiki"
+		[href]="wikiLink"
+		target="_blank"
+	>Go to Wiki</a>

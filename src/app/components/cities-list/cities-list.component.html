@@ -1,0 +1,9 @@
+<mat-nav-list class="custom-scroll">
+	<mat-list-item
+		*ngFor="let city of citiesList"
+		[routerLink]="['city-info', city.name]"
+		[routerLinkActive]="'router-link-active'"
+	>
+		{{city.name}}
+	</mat-list-item>
+</mat-nav-list>

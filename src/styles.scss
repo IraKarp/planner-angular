@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'app/styles/colors';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+	height: 100%;
+	background-color: $background-color;
+}
+
+.custom-scroll {
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		border-radius: 4px;
+		background-color: $background-color;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+		background-color: $color-muted;
+	}
+}
+
+.city {
+	.mat-tab-body-content {
+		display: flex;
+		justify-content: center;
+	}
+
+	.mat-tab-label {
+		min-width: calc(100%/8) !important;
+	}
+}

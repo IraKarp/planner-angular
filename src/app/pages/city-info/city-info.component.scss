@@ -1,0 +1,39 @@
+@import 'src/app/styles/mixins';
+
+.city {
+	margin: 30px;
+
+	.large-box {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: row;
+		margin: 16px;
+		padding: 16px;
+		border-radius: 8px;
+		height: 300px;
+		width: 90%;
+
+		.icon-main-info {
+			text-align: center;
+			.icon {
+				width: 200px;
+			}
+
+			h3, h4 {
+				margin: 10px;
+			}
+			
+		}
+	}
+
+
+	&-description {
+		@include line-clamp(7);
+	}
+
+	&-wiki {
+		display: block;
+		text-align: end;
+	}
+}
